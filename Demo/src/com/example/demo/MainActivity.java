@@ -9,10 +9,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.RadioGroup;
 
 public class MainActivity extends Activity {
 
+	public static MainActivity Main;
 	private LayoutInflater  inflater;
 	private View clientPage;
 	private View companyPage;
@@ -24,6 +26,7 @@ public class MainActivity extends Activity {
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    	Main = this;
         super.onCreate(savedInstanceState);
         
         inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -34,6 +37,8 @@ public class MainActivity extends Activity {
         clientPageControl = new ClientPageControl(clientPage);
         companyPageControl = new CompanyPageControl(companyPage);
         
+        
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(mainPage);
 
         if (savedInstanceState == null) {
