@@ -7,23 +7,22 @@
     android:focusableInTouchMode="false" >
 
     <ImageView
-        android:id="@+id/chat_dialog_personPic"
+        android:id="@+id/page1_list_bg"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitXY"
         android:src="@drawable/pic1_bg" />
 
     <Button
-        android:id="@+id/button_p1_return"
-        android:layout_width="wrap_content"
+        android:id="@+id/page1_list_btn_back"
+        android:layout_width="36dp"
         android:layout_height="wrap_content"
         android:layout_x="2dp"
         android:layout_y="4dp"
-        android:onClick="BackToMain"
-        android:text="返回" />
+        android:text="@string/back" />
 
     <ImageButton
-        android:id="@+id/btn_p1_company"
+        android:id="@+id/page1_list_btn_company"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_x="0dp"

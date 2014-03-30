@@ -13,7 +13,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
-        android:id="@+id/button_p1_return"
+        android:id="@+id/page1_list_btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="11dp"
