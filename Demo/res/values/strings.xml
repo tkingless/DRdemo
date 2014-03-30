@@ -4,5 +4,9 @@
     <string name="app_name">Demo</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="generalUser">一般用戶</string>
+    <string name="companyExclusive">公司專用</string>
+    <string name="Enter">進入</string>
+
 
 </resources>

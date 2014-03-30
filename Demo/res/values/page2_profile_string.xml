@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="back">&lt;</string>
+    <string name="Paint">logo_paint</string>
+    <string name="Person">logo_person</string>
+    <string name="mockCompany">模擬公司</string>
+    
+     <string name="dialog_time">下午 1:00</string>
+     <string name="dialog_content">something here....something here....something here....something here....something here....</string>
+     
+</resources>

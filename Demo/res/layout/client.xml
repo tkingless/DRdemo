@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusable="false"
+    android:focusableInTouchMode="false" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/pic1_bg" />
 
     <Button
-        android:id="@+id/buttonReturn"
+        android:id="@+id/button_p1_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="8dp"
-        android:layout_y="42dp"
+        android:layout_x="2dp"
+        android:layout_y="4dp"
         android:onClick="BackToMain"
         android:text="返回" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="13dp"
-        android:layout_y="8dp"
-        android:text="一般用戶"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <ImageButton
+        android:id="@+id/btn_p1_company"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_x="0dp"
+        android:layout_y="99dp"
+        android:background="@drawable/btn_demo_company"
+        android:scaleType="fitXY" />
 
 </AbsoluteLayout>
