@@ -30,19 +30,19 @@ public class Page1Control extends BasePageControl{
 		btn_back.setOnClickListener(new ConClickListener(this, "on_btn_back"));
 	}
 	
-	public void on_btn_company_touch()
+	public void on_btn_company_touch(View v, MotionEvent event)
 	{
 		btn_p1_company.setImageResource(R.drawable.btn_demo_company_down);
 	}
 	
-	public void on_btn_company()
+	public void on_btn_company(View v)
 	{
 		Log.d("on_btn_p1_company", "hihi4");
 		btn_p1_company.setImageResource(R.drawable.btn_demo_company);
 		Main.SwitchToPage(Main.chatPage);
 	}
 	
-	public void on_btn_back()
+	public void on_btn_back(View v)
 	{
 		Main.SwitchToPage(Main.mainPage);
 	}

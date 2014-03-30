@@ -16,7 +16,7 @@ public class ConClickListener implements OnClickListener{
 	{
 		receiver = Receiver;
 		try {
-			method = receiver.getClass().getMethod(MethodName);
+			method = receiver.getClass().getMethod(MethodName, View.class);
 		} catch (NoSuchMethodException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,7 +29,7 @@ public class ConClickListener implements OnClickListener{
 		if(method != null)
 		{
 			try {
-				method.invoke(receiver);
+				method.invoke(receiver, v);
 			} catch (IllegalArgumentException e) {
 				Log.d("onClick", "IllegalArgumentException");
 			} catch (IllegalAccessException e) {

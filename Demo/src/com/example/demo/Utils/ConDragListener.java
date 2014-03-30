@@ -4,20 +4,20 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import android.util.Log;
-import android.view.MotionEvent;
+import android.view.DragEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
+import android.view.View.OnDragListener;
 
-public class ConTouchListener implements OnTouchListener{
+public class ConDragListener implements OnDragListener{
 
 	private Method method = null;
 	private Object receiver;
 	
-	public ConTouchListener(Object Receiver, String MethodName)
+	public ConDragListener(Object Receiver, String MethodName)
 	{
 		receiver = Receiver;
 		try {
-			method = receiver.getClass().getMethod(MethodName, View.class, MotionEvent.class);
+			method = receiver.getClass().getMethod(MethodName, View.class, DragEvent.class);
 		} catch (NoSuchMethodException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -25,8 +25,7 @@ public class ConTouchListener implements OnTouchListener{
 	}
 
 	@Override
-	public boolean onTouch(View v, MotionEvent event) {
-		// TODO Auto-generated method stub
+	public boolean onDrag(View v, DragEvent event) {
 		if(method != null)
 		{
 			try {
@@ -39,6 +38,6 @@ public class ConTouchListener implements OnTouchListener{
 				Log.d("onClick", "InvocationTargetException");
 			}
 		}
-		return false;
+		return true;
 	}
 }

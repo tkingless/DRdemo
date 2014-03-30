@@ -17,10 +17,10 @@ public class MainActivity extends Activity {
 	public static MainActivity Main;
 	public View mainPage;
 	public View page1;
-	public View companyPage;
+	public View page5;
 	public View chatPage;
 	private Page1Control page1Control;
-	private CompanyPageControl companyPageControl;
+	private Page5Control companyPageControl;
 	private PageChatControl pageChatControl;
 	private RadioGroup EnterType;
 	
@@ -32,12 +32,12 @@ public class MainActivity extends Activity {
         
         LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         page1 = (View)inflater.inflate(R.layout.page1_list, null);
-        companyPage = (View)inflater.inflate(R.layout.company, null);
+        page5 = (View)inflater.inflate(R.layout.page5_advertize, null);
         chatPage = (View)inflater.inflate(R.layout.page2_chat, null);
         mainPage = (View)inflater.inflate(R.layout.activity_main, null);
         
         page1Control = new Page1Control(page1);
-        companyPageControl = new CompanyPageControl(companyPage);
+        companyPageControl = new Page5Control(page5);
 
         pageChatControl  = new PageChatControl (chatPage);
 
@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
     	if(EnterType == null)
     		EnterType = (RadioGroup) this.findViewById(R.id.radioGroupSelection);
     	//setContentView(EnterType.getCheckedRadioButtonId() == R.id.radioClient? clientPage:companyPage);
-    	setContentView(EnterType.getCheckedRadioButtonId() == R.id.radioClient? page1:companyPage);
+    	setContentView(EnterType.getCheckedRadioButtonId() == R.id.radioClient? page1:page5);
     }
     
     public void BackToMain(View v){

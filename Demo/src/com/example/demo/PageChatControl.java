@@ -18,7 +18,7 @@ public class PageChatControl  extends BasePageControl{
 	}
 
 	
-	public void on_btn_back()
+	public void on_btn_back(View v)
 	{
 		Main.SwitchToPage(Main.page1);
 	}
