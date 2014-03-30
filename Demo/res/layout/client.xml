@@ -7,7 +7,7 @@
     android:focusableInTouchMode="false" >
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/chat_dialog_personPic"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitXY"

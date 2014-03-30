@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="back">&lt;</string>
-    <string name="Paint">logo_paint</string>
+    <string name="WeChat">logo_weChat</string>
     <string name="Person">logo_person</string>
     <string name="mockCompany">模擬公司</string>
     
