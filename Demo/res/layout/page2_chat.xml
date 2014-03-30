@@ -109,10 +109,23 @@
             android:src="@android:drawable/ic_menu_edit" />
 
         <Button
-            android:id="@+id/button1"
-            android:layout_width="150dp"
+            android:id="@+id/chat_companyService"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/companyService" />
+
+        <Button
+            android:id="@+id/chat_operationTime"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/operationHours" />
+
+        <Button
+            android:id="@+id/chat_subscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subscribe" />
+
     </LinearLayout>
 
 </RelativeLayout>

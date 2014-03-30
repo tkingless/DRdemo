@@ -15,14 +15,13 @@ import android.widget.RadioGroup;
 public class MainActivity extends Activity {
 
 	public static MainActivity Main;
-	private LayoutInflater  inflater;
-	private View clientPage;
-	private View companyPage;
-	private View chatPage;
-	private ClientPageControl clientPageControl;
+	public View mainPage;
+	public View page1;
+	public View companyPage;
+	public View chatPage;
+	private Page1Control page1Control;
 	private CompanyPageControl companyPageControl;
 	private PageChatControl pageChatControl;
-	private View mainPage;
 	private RadioGroup EnterType;
 	
 	
@@ -31,13 +30,13 @@ public class MainActivity extends Activity {
     	Main = this;
         super.onCreate(savedInstanceState);
         
-        inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        clientPage = (View)inflater.inflate(R.layout.client, null);
+        LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        page1 = (View)inflater.inflate(R.layout.page1_list, null);
         companyPage = (View)inflater.inflate(R.layout.company, null);
         chatPage = (View)inflater.inflate(R.layout.page2_chat, null);
         mainPage = (View)inflater.inflate(R.layout.activity_main, null);
         
-        clientPageControl = new ClientPageControl(clientPage);
+        page1Control = new Page1Control(page1);
         companyPageControl = new CompanyPageControl(companyPage);
 
         pageChatControl  = new PageChatControl (chatPage);
@@ -56,11 +55,15 @@ public class MainActivity extends Activity {
     	if(EnterType == null)
     		EnterType = (RadioGroup) this.findViewById(R.id.radioGroupSelection);
     	//setContentView(EnterType.getCheckedRadioButtonId() == R.id.radioClient? clientPage:companyPage);
-    	setContentView(EnterType.getCheckedRadioButtonId() == R.id.radioClient? chatPage:companyPage);
+    	setContentView(EnterType.getCheckedRadioButtonId() == R.id.radioClient? page1:companyPage);
     }
     
     public void BackToMain(View v){
     	setContentView(mainPage);
+    }
+    public void SwitchToPage(View v)
+    {
+    	setContentView(v);
     }
 
 
