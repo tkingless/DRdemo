@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
         companyPageControl = new CompanyPageControl(companyPage);
 
         pageProfileControl  = new PageProfileControl (profilePage);
+
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(mainPage);
 
