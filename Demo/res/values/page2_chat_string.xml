@@ -10,5 +10,7 @@
      <string name="companyService">公司服務</string>
      <string name="operationHours">營運時間</string>
      <string name="subscribe">訂購</string>
+     <string name="hotRec">熱門推薦</string>
+     <string name="product">產品介紹</string>
      
 </resources>

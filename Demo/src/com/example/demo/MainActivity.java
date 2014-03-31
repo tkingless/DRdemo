@@ -19,9 +19,11 @@ public class MainActivity extends Activity {
 	public View page1;
 	public View page5;
 	public View chatPage;
+	public View productPage6;
 	private Page1Control page1Control;
 	private Page5Control companyPageControl;
 	private PageChatControl pageChatControl;
+	private Page6ProductControl pageProductControl;
 	private RadioGroup EnterType;
 	
 	
@@ -34,12 +36,14 @@ public class MainActivity extends Activity {
         page1 = (View)inflater.inflate(R.layout.page1_list, null);
         page5 = (View)inflater.inflate(R.layout.page5_advertize, null);
         chatPage = (View)inflater.inflate(R.layout.page2_chat, null);
+        productPage6 = (View)inflater.inflate(R.layout.page6_product, null);
         mainPage = (View)inflater.inflate(R.layout.activity_main, null);
         
         page1Control = new Page1Control(page1);
         companyPageControl = new Page5Control(page5);
 
         pageChatControl  = new PageChatControl (chatPage);
+        pageProductControl = new Page6ProductControl(productPage6);
 
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(mainPage);

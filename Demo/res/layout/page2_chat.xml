@@ -16,7 +16,6 @@
             android:id="@+id/chatReturnPrev"
             android:layout_width="34dp"
             android:layout_height="wrap_content"
-            android:onClick="BackToMain"
             android:text="@string/back" />
 
         <ImageView
@@ -91,11 +90,11 @@
                     android:layout_weight="0.21"
                     android:text="@string/dialog_content" />
             </LinearLayout>
-
         </ScrollView>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
@@ -125,6 +124,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/subscribe" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/chatPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="60dp"
+        android:background="@drawable/ic_launcher"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/chat_hotRec"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="@string/hotRec" />
+
+        <Button
+            android:id="@+id/chat_product"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="@string/product" />
 
     </LinearLayout>
 
