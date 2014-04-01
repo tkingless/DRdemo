@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class Page5Control extends BasePageControl {
+public class Page5Control_Company extends BasePageControl {
 
 	Button btn_back;
 	View CurrentDraggingView = null;
@@ -23,26 +23,36 @@ public class Page5Control extends BasePageControl {
 	float touchY;
 	
 	
-	public Page5Control(View _Page) {
+	public Page5Control_Company(View _Page) {
 		super(_Page);
 	}
 	
 	@Override
-	protected void init()
+	public void init()
 	{
 		btn_back = (Button)Page.findViewById(R.id.page5_advertize_btn_back);
 		btn_back.setOnClickListener(new ConClickListener(this, "on_btn_back"));
-		
 		for(int i=0; i<((ViewGroup)Page).getChildCount(); ++i) {
 		    View child = ((ViewGroup)Page).getChildAt(i);
 		    if(child.getClass() == ImageView.class)
 		    {
 		    	child.setOnLongClickListener(new ConLongClickListener(this, "ImageOnLongClick"));
-		    	
-		    	//child.setOnDragListener(new ConDragListener(this, "ImageOnDrag" ));
 		    }
 		}
 		Page.setOnDragListener(new ConDragListener(this, "ImageOnDrag" ));
+	}
+	
+	@Override
+	public void exit()
+	{
+		for(int i=0; i<((ViewGroup)Page).getChildCount(); ++i) {
+		    View child = ((ViewGroup)Page).getChildAt(i);
+		    if(child.getClass() == ImageView.class)
+		    {
+		    	child.setOnLongClickListener(null);
+		    }
+		}
+		Page.setOnDragListener(null);
 	}
 	
 	
@@ -81,7 +91,7 @@ public class Page5Control extends BasePageControl {
 	
 	public void on_btn_back(View v)
 	{
-		Main.SwitchToPage(Main.mainPage);
+		Main.SwitchToPage(Main.mainPage, null);
 	}
 
 }

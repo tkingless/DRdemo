@@ -20,7 +20,7 @@ public class Page1Control extends BasePageControl{
 	}
 	
 	@Override
-	protected void init()
+	public void init()
 	{
 		btn_p1_company = (ImageButton) Page.findViewById(R.id.page1_list_btn_company);
 		btn_p1_company.setOnTouchListener(new ConTouchListener(this, "on_btn_company_touch"));
@@ -28,6 +28,13 @@ public class Page1Control extends BasePageControl{
 		
 		btn_back = (Button)Page.findViewById(R.id.page1_list_btn_back);
 		btn_back.setOnClickListener(new ConClickListener(this, "on_btn_back"));
+	}
+	
+	public void exit()
+	{
+		btn_p1_company.setOnTouchListener(null);
+		btn_p1_company.setOnClickListener(null);
+		btn_back.setOnClickListener(null);
 	}
 	
 	public void on_btn_company_touch(View v, MotionEvent event)
@@ -39,12 +46,12 @@ public class Page1Control extends BasePageControl{
 	{
 		Log.d("on_btn_p1_company", "hihi4");
 		btn_p1_company.setImageResource(R.drawable.btn_demo_company);
-		Main.SwitchToPage(Main.chatPage);
+		Main.SwitchToPage(Main.chatPage, Main.pageChatControl);
 	}
 	
 	public void on_btn_back(View v)
 	{
-		Main.SwitchToPage(Main.mainPage);
+		Main.SwitchToPage(Main.mainPage, null);
 	}
 
 }

@@ -14,18 +14,26 @@ import android.widget.RadioGroup;
 
 public class MainActivity extends Activity {
 
+	public enum Role{
+		Client, Company;
+	}
+	
+	public static BasePageControl CurrentViewControl;
+	
+	public static Role role;
 	public static MainActivity Main;
 	public View mainPage;
 	public View page1;
 	public View page5;
 	public View chatPage;
 	public View productPage6;
-	private Page1Control page1Control;
-	private Page5Control companyPageControl;
-	private PageChatControl pageChatControl;
-	private Page6ProductControl pageProductControl;
-	private RadioGroup EnterType;
+	public Page1Control page1Control;
+	public Page5Control_Company page5Control_Company;
+	public Page5Control_Client page5Control_Client;
+	public PageChatControl pageChatControl;
+	public Page6ProductControl pageProductControl;
 	
+	private RadioGroup EnterType;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +48,8 @@ public class MainActivity extends Activity {
         mainPage = (View)inflater.inflate(R.layout.activity_main, null);
         
         page1Control = new Page1Control(page1);
-        companyPageControl = new Page5Control(page5);
+        page5Control_Company = new Page5Control_Company(page5);
+        page5Control_Client = new Page5Control_Client(page5);
 
         pageChatControl  = new PageChatControl (chatPage);
         pageProductControl = new Page6ProductControl(productPage6);
@@ -59,15 +68,21 @@ public class MainActivity extends Activity {
     	if(EnterType == null)
     		EnterType = (RadioGroup) this.findViewById(R.id.radioGroupSelection);
     	//setContentView(EnterType.getCheckedRadioButtonId() == R.id.radioClient? clientPage:companyPage);
-    	setContentView(EnterType.getCheckedRadioButtonId() == R.id.radioClient? page1:page5);
+    	
+    	role = EnterType.getCheckedRadioButtonId() == R.id.radioClient?Role.Client:Role.Company;
+    	SwitchToPage(role == Role.Client? page1:page5, role == Role.Client?page1Control:page5Control_Company);
     }
     
-    public void BackToMain(View v){
-    	setContentView(mainPage);
-    }
-    public void SwitchToPage(View v)
+    public void SwitchToPage(View v, BasePageControl viewControl)
     {
+    	if(CurrentViewControl != null)
+    		CurrentViewControl.exit();
+    	CurrentViewControl = viewControl;
+    	if(CurrentViewControl != null)
+    		CurrentViewControl.init();
+    	
     	setContentView(v);
+    	
     }
 
 

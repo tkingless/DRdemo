@@ -10,10 +10,14 @@ public class BasePageControl{
 		Main = MainActivity.Main;
 		Page = _Page;
 		Log.d("Construct Page Control", Page.toString());
-		init();
 	}
 	
-	protected void init()
+	public void init()
+	{
+		
+	}
+	
+	public void exit()
 	{
 		
 	}
