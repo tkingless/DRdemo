@@ -27,7 +27,7 @@ public void exit()
 
 public void on_btn_back(View v)
 {
-	Main.SwitchToPage(Main.chatPage, null);
+	Main.SwitchToPage(Main.chatPage, Main.pageChatControl);
 
 }
 	

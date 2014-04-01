@@ -36,5 +36,11 @@ public class Page5Control_Client extends BasePageControl {
 	{
 
 	}
+	
+	public void on_btn_back(View v)
+	{
+		Main.SwitchToPage(Main.chatPage, Main.pageChatControl);
+
+	}
 
 }
