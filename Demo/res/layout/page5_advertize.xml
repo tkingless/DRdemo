@@ -19,6 +19,6 @@
         android:layout_below="@+id/page5_advertize_btn_back"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="18dp"
-        android:src="@drawable/img_advertize" />
+        android:src="@drawable/mv_production" />
 
 </RelativeLayout>

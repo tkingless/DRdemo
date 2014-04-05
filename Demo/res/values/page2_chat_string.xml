@@ -3,14 +3,20 @@
     <string name="back">&lt;</string>
     <string name="WeChat">logo_weChat</string>
     <string name="Person">logo_person</string>
-    <string name="mockCompany">模擬公司</string>
+    <string name="mockCompany">Times 製作</string>
     
      <string name="dialog_time">下午 1:00</string>
-     <string name="dialog_content">something here....something here....something here....something here....something here....</string>
-     <string name="companyService">公司服務</string>
-     <string name="operationHours">營運時間</string>
-     <string name="subscribe">訂購</string>
-     <string name="hotRec">熱門推薦</string>
-     <string name="product">產品介紹</string>
+     <string name="dialog_content">你好!本店是香港的製作公司，專門多媒體制作</string>
+     
+     <string name="chat_layout_functionalBtn1_pop1">公司業務</string>
+     <string name="chat_layout_functionalBtn1_pop2">公司服務</string>
+     <string name="chat_layout_functionalBtn1">公司簡介</string>
+     
+     <string name="chat_layout_functionalBtn2_pop">訪問片拍攝</string>
+     <string name="productionsharing">制作分享</string>
+     
+     <string name="chat_layout_functionalBtn3_pop1">問店地址</string>
+     <string name="chat_layout_functionalBtn3_pop2">聯絡</string>
+     <string name="RealTimeService">即時服務</string>
      
 </resources>

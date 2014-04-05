@@ -4,8 +4,14 @@ import com.example.demo.Utils.ConClickListener;
 
 import android.view.View;
 import android.widget.Button;
+//import android.view.WindowManager.LayoutParams;
+//import android.app.Dialog;
+//import android.content.DialogInterface;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 
-public class PageChatControl  extends BasePageControl{
+
+public class PageChatControl extends BasePageControl{
 	
 	Button btn_back;
 	Button btn_companyService;
@@ -13,6 +19,9 @@ public class PageChatControl  extends BasePageControl{
 	Button btn_hotRec;
 	
 	View view_CSPopup;
+	
+	Builder builder = new Builder(MainActivity.Main);
+	AlertDialog dialog;
 	
 	public PageChatControl(View _Page) {
 		super(_Page);
@@ -23,8 +32,8 @@ public class PageChatControl  extends BasePageControl{
 	{
 		btn_back = (Button)Page.findViewById(R.id.chatReturnPrev);
 		btn_companyService = (Button)Page.findViewById(R.id.chat_companyService);
-		btn_product = (Button)Page.findViewById(R.id.chat_product);
-		btn_hotRec = (Button)Page.findViewById(R.id.chat_hotRec);
+		btn_product = (Button)Page.findViewById(R.id.id_chat_layout_functionalBtn1_pop2);
+		btn_hotRec = (Button)Page.findViewById(R.id.id_chat_layout_functionalBtn1_pop1);
 		view_CSPopup = (View)Page.findViewById(R.id.chatPopup);
 		
 		btn_back.setOnClickListener(new ConClickListener(this, "on_btn_back"));
